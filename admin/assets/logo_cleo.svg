@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo_cleo.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="258.59863"
+     inkscape:cy="777.85859"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <polygon
+       id="polygon4137"
+       points="73.287,103.014 28.489,58.184 26.359,56.062 0,82.424 46.305,130 "
+       style="fill:#0072b4"
+       transform="translate(151,171.41222)" />
+    <path
+       id="path4147"
+       d="m 197.305,301.43179 47.815,0 35.89,-35.896 0,-47.817 -83.705,83.713 z m 78.679,-37.978 -4.322,4.326 0,-27.022 -55.643,55.648 -6.586,0 66.55,-66.554 0,33.602 z m -42.563,-92.022 -48.019,0 -34.384,34.391 -0.018,48.033 26.359,-26.362 2.127,-2.122 22.895,-22.9 31.04,-31.04 z m -77.38,42.426 0.004,-5.952 31.437,-31.448 33.81,0 -4.769,4.769 -27.862,0 -32.62,32.631 z"
+       inkscape:connector-curvature="0"
+       style="fill:#00aeef" />
+    <path
+       id="path4157"
+       d="m 209.4265,296.40579 6.586,0 55.643,-55.648 0,27.022 4.322,-4.326 0,-33.602 -66.551,66.554 z m 11.858,-119.948 -33.81,0 -31.438,31.449 -0.004,5.952 32.62,-32.631 27.862,0 4.77,-4.77 z"
+       inkscape:connector-curvature="0"
+       style="fill:#00bdf2" />
+  </g>
+</svg>

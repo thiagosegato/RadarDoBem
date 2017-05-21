@@ -1,0 +1,262 @@
+﻿/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Zd2E9abXLFGSr9G3YK2MsDrvev4WAjW489CRDHIkJ90.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Zd2E9abXLFGSr9G3YK2MsCGXDOnx9ptx3UTSPTrfsgk.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Zd2E9abXLFGSr9G3YK2MsAZ98xO_Wnt-JIem4AuLGfs.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Zd2E9abXLFGSr9G3YK2MsE1G989qbVg6RT5ly5jB8V8.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Zd2E9abXLFGSr9G3YK2MsJ84zb0nVte6liF9gGtpo1Y.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Zd2E9abXLFGSr9G3YK2MsD86pq2NkPzVgw_9lpT6RGI.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Zd2E9abXLFGSr9G3YK2MsDAdhzWOYhqHvOZMRGaEyPo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/** Configuração cliente **/
+textarea:focus,
+select:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(55, 55, 55, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(55, 55, 55, 0.6);
+  outline: 0 none;
+}
+/** Generate colors -> http://blog.koalite.com/bbg/ **/
+.btn-info { 
+  color: #FFFFFF; 
+  background-color: #575757; 
+  border-color: #000000; 
+}  
+.btn-info:hover, 
+.btn-info:focus, 
+.btn-info:active, 
+.btn-info.active, 
+.open .dropdown-toggle.btn-info { 
+  color: #FFFFFF; 
+  background-color: #373737; 
+  border-color: #000000; 
+}  
+.btn-info:active, 
+.btn-info.active, 
+.open .dropdown-toggle.btn-info { 
+  background-image: none; 
+}  
+.btn-info.disabled, 
+.btn-info[disabled], 
+fieldset[disabled] .btn-info, 
+.btn-info.disabled:hover, 
+.btn-info[disabled]:hover, 
+fieldset[disabled] .btn-info:hover, 
+.btn-info.disabled:focus, 
+.btn-info[disabled]:focus, 
+fieldset[disabled] .btn-info:focus, 
+.btn-info.disabled:active, 
+.btn-info[disabled]:active, 
+fieldset[disabled] .btn-info:active, 
+.btn-info.disabled.active, 
+.btn-info[disabled].active, 
+fieldset[disabled] .btn-info.active { 
+  background-color: #575757; 
+  border-color: #000000; 
+}  
+.btn-info .badge { 
+  color: #575757; 
+  background-color: #FFFFFF; 
+}
+
+/*Itens Catálogo*/
+.itemCatalogo  .itemCatalogoDescr { color:#a49d9d; }
+.itemCatalogo  .itemCatalogoPreco { font-size:17px; }
+.itemCatalogo  .itemCatalogoPrecoDigi { color:#c66666; font-size:16px; }
+
+.itemCatalogo .itemCatalogoImg {
+	max-height:350px;
+}
+
+
+.containerCatalogo { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; max-width: 1200px; }
+
+/*
+@media (min-width: 768px) {
+  .containerCatalogo {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .containerCatalogo {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .containerCatalogo {
+    width: 1170px;
+  }
+}*/
+
+
+/** fim Configuração Cliente **/
+
+
+
+.info-title hr{ margin-top:0px; }
+.info-title h3{ font-weight:bold; }
+/**.link-white {color:white !important;}**/
+.modal-body {text-align:justify !important;}
+.panel-color {background:#F8F8F8 !important;}
+.breadcrumb-pedidos {margin-top:-20px;}
+.btMarginRight {margin-right:15px;}
+.btMarginTop {margin-top:5px;}
+.btMore {color:green; font-size:1.2em;} 
+.marginCenter {margin:0 auto;}
+.marginBottom {
+	margin-bottom:.7em !important;
+}
+.btn-space {margin-left:5px;}
+.bgGrey {background:#FCFCFC;}
+.bgTopGrey {background:#F8F8F8; padding-top:.8em;}
+.bgBottomGrey {background:#F8F8F8; padding-bottom:.8em;}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.login-box {background:white; border-radius: 10px; border:1px solid #CCC;}
+.navbar-nav.navbar-right:last-child {
+	margin-right: 0 !important;
+}
+
+/*.header-task {
+	background:url(../grey.png) repeat-x; border-bottom:1px solid #e7e7e7; padding:10px 0 10px 0
+}*/
+
+
+legend {
+	font-size:1.1em;
+	margin-bottom:10px !important;
+	font-weight:bold;
+}
+
+.loader {
+	display: none;
+}
+
+.align-right-middle {
+	text-align:right;	
+}
+
+.waiting-teleconsulta {
+	color:blue;
+	text-transform:uppercase;
+	font-weight:bold;
+}	
+.urgency-teleconsulta {
+	color:red;
+	text-transform:uppercase;
+	font-weight:bold;
+}	
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	/* Corrige botões add e pesquisar (teleconsulta) */
+	.btCorrecao {
+		padding-left:0 !important;
+		padding-right:0 !important;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.align-right-middle {
+		text-align:left;	
+		background-color:SKYBLUE;
+		color:white;
+		font-weight:bold;
+	}
+}
+
+#gritter-notice-wrapper { position:fixed; top:20px; right:20px; width:301px; z-index:9999; }
+#gritter-notice-wrapper.top-left { left: 20px; right: auto; } 
+#gritter-notice-wrapper.bottom-right { top: auto; left: auto; bottom: 20px; right: 20px; }
+#gritter-notice-wrapper.bottom-left { top: auto; right: auto; bottom: 20px; left: 20px; }
+.gritter-item-wrapper { position:relative; margin:0 0 10px 0; background:url('gritter/ie-spacer.gif'); }
+.gritter-top { background:url(gritter/gritter.png) no-repeat left -30px; height:10px; }
+.hover .gritter-top { background-position:right -30px; }
+.gritter-bottom { background:url(gritter/gritter.png) no-repeat left bottom; height:8px; margin:0; z-index: 5000; }
+.hover .gritter-bottom { background-position: bottom right; }
+.gritter-item { display:block; background:url(gritter/gritter.png) no-repeat left -40px; color:#eee; padding:2px 11px 8px 11px; font-size: 11px; font-family:verdana; }
+.hover .gritter-item { background-position:right -40px; }
+.gritter-item p { padding:0; margin:0; }
+.gritter-close { display:none; position:absolute; top:5px; left:3px; background:url(gritter/gritter.png) no-repeat left top; cursor:pointer; width:30px; height:30px; }
+.gritter-title { font-size:14px; font-weight:bold; padding:0 0 7px 0; display:block; text-shadow:1px 1px 0 #000; }
+.gritter-image { width:48px; height:48px; float:left; }
+.gritter-with-image, .gritter-without-image { padding:0 0 5px 0; }
+.gritter-with-image { width:220px; float:right; }
+.gritter-light .gritter-item, .gritter-light .gritter-bottom, .gritter-light .gritter-top, .gritter-close { background-image: url(gritter/gritter-light.png); color: #222; }
+.gritter-light .gritter-title { text-shadow: none; }
+.ui-autocomplete-loading { background: url(../autocomplete_loading.gif) right center no-repeat; }
+.ui-autocomplete-input { border: 1px solid #CCCCCC; padding: 3px !important; box-shadow: 0 2px 2px #8F8F8F inset; }
+
+.hackBt { margin-left:5px !important;}
+.hack-row  {margin-left: 0 !important;}
+@media only screen and (max-width: 768px) {
+	.hackBt {margin-left:0 !important;}
+	.hack-row  {margin-right: 0 !important;}
+}
