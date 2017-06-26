@@ -23,11 +23,11 @@ select 	tl.nm_local,
         tl.ds_contato, 
         concat(tl.nm_rua, ' Nº ', tl.nr_rua_numero, ' - ', tl.nr_cep, ' ', tl.nm_bairro) as endereco, 
 		tl.nr_view, 
-        tu.nm_usuario,
+        tm.*,
         date_format(tl.dt_create, '%d/%m/%Y') as date_create,
         date_format(tl.dt_edit, '%d/%m/%Y') as date_edit 
 from tb_local as tl
-inner join tb_usuario as tu on(tl.cd_usuario_owner=tu.ci_usuario)
+inner join tb_municipio as tm on(tl.cd_municipio=tm.ci_municipio)
 where tl.ci_local = $id
   and tl.fl_ativo = true
 ";

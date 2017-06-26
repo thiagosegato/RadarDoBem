@@ -6,6 +6,6 @@ echo drop database %DBNAME%; | "%DBCMD%" -u%USER%
 echo.
 echo create database %DBNAME%; | "%DBCMD%" -u%USER%
 echo.
-"%DBCMD%" -u%USER% %DBNAME% < install_2017-05-21.sql
+"%DBCMD%" -u%USER% %DBNAME% < install_2017-06-26.sql
 echo.
 pause

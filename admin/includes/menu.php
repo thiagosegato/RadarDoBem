@@ -6,6 +6,7 @@ defined('EXEC') or die();
 	
 	<?php if($auth->isMaster()){ ?>
 		<li><a href="?page=modalidade">Modalidades</a></li>
+		<li><a href="?page=municipios">Municípios</a></li>
 	<?php } ?>
 	
 	<li class="dropdown">

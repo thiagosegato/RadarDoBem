@@ -14,7 +14,7 @@ defined('EXEC') or die();
                     <div class="slide-text">
                         <h1>Onde Ajudar?</h1>
                         <p>As instituições mapeadas pela comunidade. Mostre sua solidariedade!</p>
-                        <a href="mapa/" class="btn btn-common">VISUALIZAR MAPA AQUI</a>
+                        <a href="mapa/" class="btn btn-common" style="font-weight:bold; font-size:18px;">VISUALIZAR MAPA AQUI</a>
                     </div>
                     <img src="images/home/slider/hill.png" class="slider-hill" alt="slider image">
                     <img src="images/home/slider/house.png" class="slider-house" alt="slider image">

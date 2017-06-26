@@ -26,6 +26,13 @@ CREATE TABLE tb_local (
 	PRIMARY KEY(ci_local)
 );
 
+CREATE TABLE tb_municipio ( 
+	ci_municipio INT(20) UNSIGNED NOT NULL auto_increment,
+	nm_municipio varchar(250) NOT NULL, 
+	sg_estado char(2) NOT NULL,
+	PRIMARY KEY(ci_municipio)
+);
+
 CREATE TABLE tb_modalidade ( 
 	ci_modalidade INT(20) UNSIGNED NOT NULL auto_increment,
 	nm_modalidade varchar(150) NOT NULL, 

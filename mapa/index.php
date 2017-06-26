@@ -1,15 +1,22 @@
 <?php 
-if($_SERVER["HTTPS"] != "on") {
+
+$localhosts = array('::1', '127.0.0.1', 'localhost');
+if( in_array($_SERVER['SERVER_ADDR'], $localhosts) === false 
+		&& $_SERVER["HTTPS"] != "on") {
 	header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 	exit();	
 }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta name="description" content="Radar do Bem">
+		<meta name="author" content="Radar do Bem">
 		<title>RadarDoBem</title>
+		<link rel="shortcut icon" href="images/ico/favicon.ico">
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/font-awesome.min.css" rel="stylesheet">
 		<link href="../css/main.css" rel="stylesheet">
@@ -123,7 +130,6 @@ if($_SERVER["HTTPS"] != "on") {
 								<br>
 								<div style="color:#0099AE; font-size:12px; margin-top:10px;"> 
 									<span class="fa-margin1"><i class="fa fa-share-alt"></i> <span class="modal-view">3</span> Visualizações</span>, &nbsp;&nbsp;&nbsp; 
-									<span class="fa-margin1"><i class="fa fa-user"></i> Criado por <span class="modal-user">Endure</span></span>, &nbsp;&nbsp;&nbsp; 
 									<span class="fa-margin1"><i class="fa fa-clock-o"></i> <span class="modal-date-create">February 11,2014</span></a></span>, &nbsp;&nbsp;&nbsp; 
 									<span class="fa-margin1"><i class="fa fa-edit"></i> <span class="modal-date-edit">February 12,2014</span></a></span>
 								</div>
@@ -262,8 +268,9 @@ if($_SERVER["HTTPS"] != "on") {
                         </div>
 						<p><b>Denúncia - Instituição <span class="modal-id-local"></span> - CEP</b></p>
 						<p>Iremos analizar e entrar em contato o mais breve possível.</p>
-						Email:<br>
+						E-mails:<br>
 						<a href="mailto:radardobemoficial@gmail.com">radardobemoficial@gmail.com</a>
+						<a href="mailto:admin@radardobem.com.br">admin@radardobem.com.br</a>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Fechar</button>
@@ -290,8 +297,9 @@ if($_SERVER["HTTPS"] != "on") {
 								</div>
 								<p><b>Gestor - Instituição <span class="modal-id-local"></span> - CEP</b></p>
 								<p>Iremos analizar e entrar em contato o mais breve possível.</p>
-								Email:<br>
+								E-mails:<br>
 								<a href="mailto:radardobemoficial@gmail.com">radardobemoficial@gmail.com</a>
+								<a href="mailto:admin@radardobem.com.br">admin@radardobem.com.br</a>
 							</div>							
 						</div>						
 					</div>

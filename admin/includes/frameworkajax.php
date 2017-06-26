@@ -17,11 +17,11 @@ $currentFolder = getcwd();
 $parts = explode(DS, $currentFolder);
 array_pop($parts);
 $correctFolder = implode(DS, $parts);
-
 @define('ATITUDE_BASE', $correctFolder);
 define('ATITUDE_LIBRARIES', ATITUDE_BASE.DS.'com'.DS.'atitudeweb');
-require_once(ATITUDE_BASE.DS.'config.php');
+require_once('../../config.php');
 require_once(ATITUDE_LIBRARIES.DS.'loader.php');
+
 Loader::import('com.atitudeweb.Session');
 Loader::import('com.atitudeweb.database.Connection');
 Loader::import('com.atitudeweb.IAuthenticate');
@@ -31,10 +31,10 @@ Session::start();
 Connection::open();
 
 //Carregando classe de autenticação
-if(!Loader::import(Config::AUTH_CLASS_ADMIN)){
+if(!Loader::import(Config::AUTH_CLASS)){
 	die('Classe de autenticação não encontrado!');	
 }
-$pack = explode('.', Config::AUTH_CLASS_ADMIN);
+$pack = explode('.', Config::AUTH_CLASS);
 $auth = new $pack[count($pack) - 1];
 
 //Carregando o usuário logado na sessão

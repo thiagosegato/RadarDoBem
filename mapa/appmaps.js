@@ -227,7 +227,6 @@ function openInfoModal(id){
 	$('#modalInfo .modal-modalidades').html('');
 	$('#modalInfo .modal-contato').html('');
 	$('#modalInfo .modal-view').html('');
-	$('#modalInfo .modal-user').html('');
 	$('#modalInfo .modal-date-create').html('');
 	$('#modalInfo .modal-date-edit').html('');
 	$('#modalInfo .modal-title').html();
@@ -245,11 +244,10 @@ function openInfoModal(id){
 			$('.modal-id-local').html(id);
 			$('#modalInfo .modal-title').html(local.nm_local);
 			$('#modalInfo .modal-descr').html(local.ds_local);
-			$('#modalInfo .modal-endereco').html(local.endereco);
+			$('#modalInfo .modal-endereco').html(local.endereco + ', ' + local.nm_municipio + ' - ' + local.sg_estado);
 			$('#modalInfo .modal-modalidades').html(data.modalidades);
 			$('#modalInfo .modal-contato').html(local.ds_contato);
 			$('#modalInfo .modal-view').html(local.nr_view);
-			$('#modalInfo .modal-user').html(local.nm_usuario);
 			$('#modalInfo .modal-date-create').html(local.date_create);
 			$('#modalInfo .modal-date-edit').html(local.date_edit);
 

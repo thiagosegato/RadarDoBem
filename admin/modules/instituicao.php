@@ -1,5 +1,6 @@
 <?php
 defined('EXEC') or die();
+$ufDefault = 'CE';
 
 if(!$auth->isRead('instituicao')){
 	Util::info(Config::AUTH_MESSAGE);
@@ -88,6 +89,7 @@ if(isset($_GET['db']) && isset($_GET['form'])){
 	$nm_local = addslashes($_POST['nm_local']);
 	$ds_local = addslashes($_POST['ds_local']);	
 	$ds_contato = addslashes($_POST['ds_contato']);
+	$cd_municipio = $_POST['ci_municipio'];
 	$nm_rua = addslashes($_POST['nm_rua']);
 	$nr_rua_numero = addslashes($_POST['nr_rua_numero']);
 	$nm_bairro = addslashes($_POST['nm_bairro']);
@@ -97,11 +99,11 @@ if(isset($_GET['db']) && isset($_GET['form'])){
 	$fl_ativo = addslashes($_POST['fl_ativo']);
 		
 	if($_GET['form'] == 0){ //cadastro	
-		$sql = "INSERT INTO tb_local(nm_local, ds_local, ds_contato, nm_rua, nr_rua_numero, nm_bairro, nr_cep, nr_lat, nr_lng, cd_usuario_owner, fl_ativo)
-		VALUES ('$nm_local', '$ds_local', '$ds_contato', '$nm_rua', '$nr_rua_numero', '$nm_bairro', '$nr_cep', '$nr_lat', '$nr_lng', $cd_usuario_owner_edit, $fl_ativo);";
+		$sql = "INSERT INTO tb_local(nm_local, ds_local, ds_contato, cd_municipio, nm_rua, nr_rua_numero, nm_bairro, nr_cep, nr_lat, nr_lng, cd_usuario_owner, fl_ativo)
+		VALUES ('$nm_local', '$ds_local', '$ds_contato', $cd_municipio, '$nm_rua', '$nr_rua_numero', '$nm_bairro', '$nr_cep', '$nr_lat', '$nr_lng', $cd_usuario_owner_edit, $fl_ativo);";
 	}	
 	elseif($_GET['form'] > 0){ //alteração
-		$sql = "UPDATE tb_local SET nm_local='$nm_local', ds_local='$ds_local', ds_contato='$ds_contato', nm_rua='$nm_rua', nr_rua_numero='$nr_rua_numero', nm_bairro='$nm_bairro', nr_cep='$nr_cep', nr_lat='$nr_lat', nr_lng='$nr_lng', cd_usuario_edit=$cd_usuario_owner_edit, fl_ativo=$fl_ativo, dt_edit=now() WHERE ci_local = $ci_local;"; 
+		$sql = "UPDATE tb_local SET nm_local='$nm_local', ds_local='$ds_local', ds_contato='$ds_contato', cd_municipio=$cd_municipio, nm_rua='$nm_rua', nr_rua_numero='$nr_rua_numero', nm_bairro='$nm_bairro', nr_cep='$nr_cep', nr_lat='$nr_lat', nr_lng='$nr_lng', cd_usuario_edit=$cd_usuario_owner_edit, fl_ativo=$fl_ativo, dt_edit=now() WHERE ci_local = $ci_local;"; 
 	}
 	
 	//echo $sql; exit;
@@ -126,29 +128,39 @@ if(isset($_GET['form'])){ //Formulário para adição ou alteração de registro
 			Util::info(Config::AUTH_MESSAGE);
 			return true;
 		}
-		$rowEdit = query("select * from tb_local where ci_local = ".$_GET['form'])->fetch();
+		$rowEdit = query("select tl.*, tm.* from tb_local tl inner join tb_municipio tm on(tl.cd_municipio=tm.ci_municipio) where tl.ci_local = ".$_GET['form'])->fetch();
 		$modalidades = query("select * from tb_modalidade order by 2 asc");
 		$modalidadesSelect = query("select cd_modalidade from tb_local_modalidade where cd_local = ".$_GET['form'])->fetchAll();		
 		$fotos = query("select * from tb_foto where cd_local = ".$_GET['form'])->fetchAll();
+		
+		//Verificando o estado para carregar os municípios deste
+		$ufDefault = $rowEdit['sg_estado'];
+		
 	}
+	
+	$queryEstados = query("select distinct sg_estado from tb_municipio order by 1");
+	$queryMunicipios = query("select * from tb_municipio where sg_estado = '$ufDefault' order by 2 asc");
+	
 }
 else{ //Consulta no banco para listagem dos registros
 	$where = '';
 	if(@$_POST['search1']){
 		$term = addslashes($_POST['search1']);
-		$where .= "and ci_local = {$term} ";			
+		$where .= "and tl.ci_local = {$term} ";			
 	}
 	if(@$_POST['search2']){
 		$term = addslashes($_POST['search2']);
-		$where .= "and nm_local like '%{$term}%' ";			
+		$where .= "and tl.nm_local like '%{$term}%' ";			
 	}
 		
-	$sql = "select *
-	from tb_local where 1=1 $where
-	order by 2
+	$sql = "select tl.*, tm.*
+	from tb_local tl 
+	inner join tb_municipio tm on(tl.cd_municipio=tm.ci_municipio)
+	where 1=1 $where
+	order by 1 desc
 	limit {$limitPagina} offset ".(($p - 1) * $limitPagina);
 	$query = query($sql);
-	$sqlNum = "select count(*) as num from tb_local
+	$sqlNum = "select count(*) as num from tb_local tl
 	where 1=1 $where";
 	$rowNum = query($sqlNum)->fetch();
 	$registros = $rowNum['num'];	
@@ -219,10 +231,11 @@ else{ //Consulta no banco para listagem dos registros
 					<thead>
 						<tr class="btn-info">
 							<th>ID</th>
+							<th>UF</th>
+							<th>Município</th>
 							<th>Instituição</th>
 							<th>Endereço</th>
 							<th>Contato</th>
-							<th>CEP</th>
 							<th>Ativo?</th>
 							<td></td>							
 						</tr>
@@ -233,10 +246,11 @@ else{ //Consulta no banco para listagem dos registros
 						?>
 						<tr>
 							<td><?php echo $row['ci_local']; ?></td>
+							<td><?php echo $row['sg_estado']; ?></td>
+							<td><?php echo $row['nm_municipio']; ?></td>
 							<td><?php echo $row['nm_local']; ?></td>
 							<td><?php echo $row['nm_rua'].' Nº '.$row['nr_rua_numero']; ?></td>
 							<td><?php echo $row['ds_contato']; ?></td>
-							<td><?php echo $row['nr_cep']; ?></td>
 							<td><?php echo ($row['fl_ativo'] == 1 ? '<font color="green">SIM</font>' : '<font color="red">NÃO</font>'); ?></td>
 							<td class="text-center">
 								<a href="javascript:void(0);" onclick="window.location='<?php echo Util::setLink(array('form='.$row['ci_local'])); ?>';">
@@ -288,7 +302,39 @@ else{ //Consulta no banco para listagem dos registros
 					</div>
 					
 					<br><h4>Endereço</h4>				
-						
+					
+					<div class="row">
+						<div class="col-md-3">
+							UF: *
+							<select id="cd_estado" name="cd_estado" onchange="atualizaBoxLocalidade();" class="form-control">
+								<?php
+								while($row = $queryEstados->fetch()){
+									if($ufDefault == $row['sg_estado'])
+										echo '<option value="'.$row['sg_estado'].'" selected="selected">'.$row['sg_estado'].'</option>';						
+									else
+										echo '<option value="'.$row['sg_estado'].'">'.$row['sg_estado'].'</option>';
+								}
+								?>	
+							</select>
+						</div>
+						<div class="col-md-9">
+							Município: *
+							<div id="boxLocalidade">
+							<select id="ci_municipio" name="ci_municipio" class="form-control">
+								<?php
+								while($row = $queryMunicipios->fetch()){
+									if(@$rowEdit['cd_municipio'] == $row['ci_municipio'])
+										echo '<option value="'.$row['ci_municipio'].'" selected="selected">'.$row['nm_municipio'].'</option>';
+									else
+										echo '<option value="'.$row['ci_municipio'].'">'.$row['nm_municipio'].'</option>';
+								}
+								?>	
+							</select>
+							</div>
+						</div>						
+					</div>
+
+					
 					<div class="row">
 						<div class="col-md-12">
 							Endereço: *
@@ -626,6 +672,12 @@ function test(){
 	valid = valid && checkLength('nr_lng', 'Longitude', 2);
 	return valid;	
 }	
+
+function atualizaBoxLocalidade(){
+	var cd_estado = $('#cd_estado').val();
+	$('#boxLocalidade').load('partials/localizacao_box.php', {cd_estado: cd_estado});
+}
+
 </script>
 <?php
 	}
