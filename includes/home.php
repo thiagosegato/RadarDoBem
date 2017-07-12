@@ -112,7 +112,7 @@ defined('EXEC') or die();
                 <div class="single-features">
                     <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                         <h2>Como enviar sugestões?</h2>
-                        <P>Utilize logo abaixo o formulário para dúvidas ou sugestões, onde por exemplo poderá solicitar a inclusão de uma nova modalidade de doação ou tirar dúvidas a respeito do cadastro de instituições. É interessante zelar por nossas instituições, ao verificar que o telefone não existe ou endereço incorreto, nos envie um email para atualizarmos. Vamos também ajudar a manter as instituições cadastrardas corretamente!</P>
+                        <P>Utilize logo abaixo o formulário para dúvidas ou sugestões, onde por exemplo poderá solicitar a inclusão de uma nova modalidade de doação ou tirar dúvidas a respeito do cadastro de instituições. É interessante zelar por nossas instituições, ao verificar que o telefone não existe ou endereço incorreto, nos envie um email para atualizarmos. Vamos também ajudar a manter as instituições cadastradas corretamente!</P>
                     </div>
                     <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                         <img src="images/home/image2.jpg" class="img-responsive" alt="">
