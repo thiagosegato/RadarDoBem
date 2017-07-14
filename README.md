@@ -1,13 +1,6 @@
 # Radar Do Bem
 Catalogar instituições de caridade. Para os que desejam ajudar e não sabem onde!
 
-### Todo list
-
-- [ ] App Android
-- [ ] App IOS
-- [ ] Cadastro instituição através do site
-
-
 /
 ------
 Site descrevendo a idéia, contendo informações de como cadastrar uma instituição.
