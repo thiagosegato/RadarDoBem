@@ -3,8 +3,8 @@ Catalogar instituições de caridade. Para os que desejam ajudar e não sabem on
 
 ### Todo list
 
-- [x] App Android
-- [x] App IOS
+- [ ] App Android
+- [ ] App IOS
 - [ ] Cadastro instituição através do site
 
 
